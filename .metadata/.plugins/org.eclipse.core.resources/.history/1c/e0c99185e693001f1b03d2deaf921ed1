@@ -15,11 +15,11 @@ public class NewMapper implements RowMapper<NewModel>{
 			news.setId(rs.getLong("id"));
 			news.setTitle(rs.getString("title"));
 			news.setContent(rs.getString("content"));
-			news.setCategoryId(rs.getLong("categoryid"));
+			news.setCategoryId(rs.getLong("categoryId"));
 			news.setThumbnail(rs.getString("thumbnail"));
-			news.setShortDescription(rs.getString("shortdescription"));
-			news.setCreatedDate(rs.getTimestamp("createddate"));
-			news.setCreateBy(rs.getString("createdby"));
+			news.setShortDescription(rs.getString("shortDescription"));
+			news.setCreatedDate(rs);
+			news.setCreateBy(rs);
 			return news;
 		}
 		catch ( SQLException e) {
