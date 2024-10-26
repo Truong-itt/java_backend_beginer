@@ -1,0 +1,15 @@
+INDEX VERSION 1.131
+E:\2024_java_3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1872419012.index
+\new-jdbc-10-month-2024\src\main\java
+E:\2024_java_3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4169788246.index
+\new-jdbc-10-month-2024\src\main\java
+E:\2024_java_3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3766409180.index
+\new-jdbc-10-month-2024\src\main\java
+E:\2024_java_3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3219463633.index
+\new-jdbc-10-month-2024\src\main\java
+E:\2024_java_3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\306802577.index
+\new-jdbc-10-month-2024\src\main\java
+E:\2024_java_3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1454728394.index
+\new-jdbc-10-month-2024\src\main\java
+E:\2024_java_3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2788610188.index
+\new-jdbc-10-month-2024\src\main\java

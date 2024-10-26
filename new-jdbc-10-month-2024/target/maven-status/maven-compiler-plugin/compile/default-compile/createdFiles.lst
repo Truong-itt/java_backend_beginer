@@ -1,0 +1,8 @@
+com\laptrinhjavaweb\model\RoleModel.class
+com\laptrinhjavaweb\model\AbstractModel.class
+com\laptrinhjavaweb\model\UserModel.class
+com\laptrinhjavaweb\model\CategoryModel.class
+com\laptrinhjavaweb\model\CommentModel.class
+com\laptrinhjavaweb\model\NewModel.class
+com\laptrinhjavaweb\controller\web\HomeController.class
+com\laptrinhjavaweb\controller\admin\HomeController.class
