@@ -4,7 +4,7 @@
 Đây là một ứng dụng web full-stack sử dụng **Java** và **JDBC Servlet** cho phần back-end, xây dựng API theo mô hình **RESTful** để tương tác với cơ sở dữ liệu **MySQL**. Phần front-end có thể sử dụng **HTML/CSS/JavaScript** hoặc bất kỳ framework front-end nào như **React** hoặc **Vue.js** để kết nối với API.
 
 - **Backend**: Java, JDBC, Servlet, Maven
-- **Frontend**: HTML, CSS, JavaScript (hoặc framework front-end)
+- **Frontend**: HTML, CSS, JavaScript, Bootstrap
 - **Database**: MySQL
 - **Server**: Tomcat 8.5
 
