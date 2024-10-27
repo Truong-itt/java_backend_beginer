@@ -20,8 +20,7 @@ Back-end sử dụng **Java Servlets** để xây dựng API RESTful:
 
 ### Front-End
 Front-end có thể triển khai bằng:
-- **HTML/CSS/JavaScript**: Tương tác với RESTful API qua `fetch` hoặc `axios`.
-- **Framework Front-end (Tuỳ chọn)**: Có thể sử dụng React hoặc Vue.js để xây dựng giao diện tương tác và quản lý trạng thái.
+- **HTML/CSS/JavaScript**: Basic xử lí phân trang html, css, js, bootsrap hệ thống tương tác thông qua API
 
 ## Cấu hình môi trường
 
