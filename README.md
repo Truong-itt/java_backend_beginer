@@ -1,4 +1,4 @@
-# Full Stack RESTful API Web Application
+# Full Stack Project Basic Example RESTful API Web Application
 
 ## Mô tả
 Đây là một ứng dụng web full-stack sử dụng **Java** và **JDBC Servlet** cho phần back-end, xây dựng API theo mô hình **RESTful** để tương tác với cơ sở dữ liệu **MySQL**. Phần front-end có thể sử dụng **HTML/CSS/JavaScript** hoặc bất kỳ framework front-end nào như **React** hoặc **Vue.js** để kết nối với API.
