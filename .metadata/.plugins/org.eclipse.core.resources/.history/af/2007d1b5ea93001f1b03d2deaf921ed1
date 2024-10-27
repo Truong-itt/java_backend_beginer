@@ -1,0 +1,70 @@
+package com.laptrinhjavaweb.dao.impl;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.laptrinhjavaweb.dao.GenericDAO;
+import com.laptrinhjavaweb.mapper.RowMapper;
+
+public class AbstractDAO<T> implements GenericDAO<T> {
+	public Connection getConnection() {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/newjava09month2024";
+			String user = "root";
+			String password = "something";
+			return DriverManager.getConnection(url, user, password);
+		} catch (ClassNotFoundException | SQLException e) {
+			return null;
+		}
+	}
+
+	@Override
+	public <T> List<T> query(String sql, RowMapper<T> rowMapper, Object... parameters) {
+		List<T> results = new ArrayList<>();
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = getConnection();
+			// cu phap mysql
+			statement = connection.prepareStatement(sql);
+			Object[] bien = parameters;
+			// chuy doi doc parameters
+			setParameter(statement, parameters);
+			
+		}
+		catch (SQLException e) {
+			return null;
+		finally {
+		}
+			return null;
+		}
+	}
+
+	private void setParameter(PreparedStatement statement, Object[] parameters) {
+		try {
+			for (int i=0;i <=parameters.length; i++) {
+				Object parameter =  parameters[i];
+				int index = i + 1;
+					// thuc hien set ch otung dieu kien 
+				if (parameter instanceof Long) {
+					statement.setLong(arg0, arg1);
+				}
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+
+	
+	
+}
