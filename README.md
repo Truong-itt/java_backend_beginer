@@ -53,4 +53,4 @@ Front-end có thể triển khai bằng:
 1. **Clone dự án từ GitHub**:
    ```bash
    git clone <repository-url>
-   cd <repository-name>
+   cd (chưa hoàn thiện còn update 10/27/2024)
