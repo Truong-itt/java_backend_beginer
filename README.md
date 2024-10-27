@@ -1,5 +1,3 @@
-# Creating a README.md file content with the provided structure for a full-stack Java JDBC Servlet project
-
 readme_content = """
 # Full Stack RESTful API Web Application
 
