@@ -61,8 +61,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 	
 			} catch (Exception e) {
 				return null;
-		}
-
+			}
 		}
 	}
 
@@ -75,13 +74,13 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 				if (parameter instanceof Long) {
 					statement.setLong(index, (Long) parameter);
 				}
-				if (parameter instanceof String) {
+				else if (parameter instanceof String) {
 					statement.setString(index, (String) parameter);
 				}
-				if (parameter instanceof Integer) {
+				else if (parameter instanceof Integer) {
 					statement.setInt(index, (Integer) parameter);
 				}
-				if (parameter instanceof Timestamp) {
+				else if (parameter instanceof Timestamp) {
 					statement.setTimestamp(index, (Timestamp) parameter);
 				}
 			}
@@ -92,7 +91,85 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 		
 	}
 
+	@Override
+	public void update(String sql, Object... parameters) {
+		Connection connection = null;
+		PreparedStatement statement = null;
+		try {
+			connection = getConnection();
+			connection.setAutoCommit(false);
+			statement = connection.prepareStatement(sql, statement.RETURN_GENERATED_KEYS);
+			setParameter(statement, parameters);
+			statement.executeUpdate();
+			connection.commit(); 
+		} catch (Exception e) {
+			// TODO: handle exception
+			if (connection != null) {
+				try {
+					connection.rollback();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+			}
+		}
+		finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
 
+	@Override
+	public Long insert(String sql, Object... parameters) {
+		ResultSet resultSet = null;
+		Long id = null;
+		Connection connection = null;
+		PreparedStatement statement = null;
+		try {
+			connection = getConnection();
+			connection.setAutoCommit(false);
+			statement = connection.prepareStatement(sql, statement.RETURN_GENERATED_KEYS);
+			setParameter(statement, parameters);
+			statement.executeUpdate();
+			resultSet = statement.getGeneratedKeys(); 
+			if (resultSet.next()) {
+				id =  resultSet.getLong(1);
+			}
+			connection.commit(); 
+			return id;
+		} catch (Exception e) {
+			// TODO: handle exception
+			if (connection != null) {
+				try {
+					connection.rollback();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+			}
+		}
+		finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+				if (resultSet != null) {
+					resultSet.close();
+				}
 	
-	
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}		
+		return null;
+	}
 }

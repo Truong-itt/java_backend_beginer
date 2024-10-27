@@ -16,3 +16,10 @@
 127.0.0.1 - - [27/Oct/2024:09:50:13 +0700] "GET / HTTP/1.1" 404 1074
 127.0.0.1 - - [27/Oct/2024:09:50:14 +0700] "GET /new-jdbc-10-month-2024/ HTTP/1.1" 302 -
 127.0.0.1 - - [27/Oct/2024:09:50:14 +0700] "GET /new-jdbc-10-month-2024/trang-chu HTTP/1.1" 200 9163
+127.0.0.1 - - [27/Oct/2024:22:47:01 +0700] "GET / HTTP/1.1" 404 1074
+127.0.0.1 - - [27/Oct/2024:22:47:02 +0700] "GET /new-jdbc-10-month-2024/ HTTP/1.1" 302 -
+127.0.0.1 - - [27/Oct/2024:23:51:41 +0700] "GET / HTTP/1.1" 404 1074
+127.0.0.1 - - [27/Oct/2024:23:51:41 +0700] "GET /new-jdbc-10-month-2024/ HTTP/1.1" 302 -
+127.0.0.1 - - [27/Oct/2024:23:51:42 +0700] "GET /new-jdbc-10-month-2024/trang-chu HTTP/1.1" 200 9163
+127.0.0.1 - - [27/Oct/2024:23:51:42 +0700] "GET /new-jdbc-10-month-2024/template/web/css/style.css HTTP/1.1" 200 180
+127.0.0.1 - - [27/Oct/2024:23:51:42 +0700] "GET /new-jdbc-10-month-2024/template/web/bootstrap/css/bootstrap.min.css HTTP/1.1" 500 8192

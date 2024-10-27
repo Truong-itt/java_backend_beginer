@@ -1,0 +1,113 @@
+package com.laptrinhjavaweb.dao.impl;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.laptrinhjavaweb.dao.GenericDAO;
+import com.laptrinhjavaweb.mapper.RowMapper;
+
+public class AbstractDAO<T> implements GenericDAO<T> {
+	public Connection getConnection() {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/newjava09month2024";
+			String user = "root";
+			String password = "something";
+			return DriverManager.getConnection(url, user, password);
+		} catch (ClassNotFoundException | SQLException e) {
+			return null;
+		}
+	}
+
+	@Override
+	public <T> List<T> query(String sql, RowMapper<T> rowMapper, Object... parameters) {
+		List<T> results = new ArrayList<>();
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = getConnection();
+			// cu phap mysql
+			statement = connection.prepareStatement(sql);
+			Object[] bien = parameters;
+			// chuy doi doc parameters
+			setParameter(statement, parameters);
+			resultSet = statement.executeQuery(); 
+			while (resultSet.next()) {
+				results.add(rowMapper.mapRow(resultSet));
+			}
+			return results;
+		}
+		catch (SQLException e) {
+			return null;
+		}
+		finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+				if (resultSet != null) {
+					resultSet.close();
+				}
+	
+			} catch (Exception e) {
+				return null;
+			}
+		}
+	}
+
+	private void setParameter(PreparedStatement statement, Object[] parameters) {
+		try {
+			for (int i=0;i <=parameters.length; i++) {
+				Object parameter =  parameters[i];
+				int index = i + 1;    // dung cho dau "? theo thu tu tinh tu 1
+					// thuc hien set ch otung dieu kien  
+				if (parameter instanceof Long) {
+					statement.setLong(index, (Long) parameter);
+				}
+				if (parameter instanceof String) {
+					statement.setString(index, (String) parameter);
+				}
+				if (parameter instanceof Integer) {
+					statement.setInt(index, (Integer) parameter);
+				}
+				if (parameter instanceof Timestamp) {
+					statement.setTimestamp(index, (Timestamp) parameter);
+				}
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public void update(String sql, Object... objects) {
+		ResultSet resultSet = null;
+		Long id = null;
+		Connection connection = null;
+		PreparedStatement statement = null;
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+
+	@Override
+	public Long insert(String sql, Object... objects) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

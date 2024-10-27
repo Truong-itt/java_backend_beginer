@@ -10,20 +10,22 @@
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.model.UserModel"/>
 <fullyQualifiedTypeName name="java.sql.DriverManager"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.service.ICategoryService"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.dao.ICategoryDAO"/>
 <fullyQualifiedTypeName name="javax.inject.Inject"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.service.INewService"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.dao.GenericDAO"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.NewModel"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.model.CategoryModel"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.mapper.RowMapper"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.dao.INewDAO"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.mapper.CategoryMapper"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.NewModel"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
 </qualifiedTypeNameHistroy>
