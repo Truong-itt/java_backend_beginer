@@ -24,7 +24,21 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 	@Override
 	public Long save(NewModel newModel) {
 		String sql = "Insert into news (title, content, categoryid) value(?,?,?)";		
-		return insert(sql, newModel.getTitle(), newModel.getContent(), newModel.getCategoryId());
+		return insert(
+				sql,
+				newModel.getTitle(), 
+				newModel.getContent(), 
+				newModel.getCategoryId()
+//				newModel.getThumbnail(),
+//				newModel.getShortDescription());
+				);
+	}
+
+	@Override
+	public NewModel findOne(Long id) {
+		String sql = "SELECT * FROM news WHERE id = ?";
+		List<NewModel> news = query(sql, new NewMapper(), id);
+		return news.isEmpty() ? null : news.get(0);
 	}
 
 //	@Override

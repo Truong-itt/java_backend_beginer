@@ -1,0 +1,26 @@
+package com.laptrinhjavaweb.utils;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+
+public class HttpUtil {
+	private String value;
+	public HttpUtil () {
+		
+	}
+	
+	public static HttpUtil of (BufferedReader reader) {
+	    StringBuilder sb = new StringBuilder();
+	    String line;
+		try {
+			line = reader.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	   
+	    while (line != null) {
+	        sb.append(line);
+	    }
+		return new HttpUtil();
+	}
+}

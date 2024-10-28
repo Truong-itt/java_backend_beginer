@@ -1,0 +1,20 @@
+package com.laptrinhjavaweb.utils;
+
+import java.io.BufferedReader;
+
+public class HttpUtil {
+	private String value;
+	public HttpUtil () {
+		
+	}
+	
+	public static HttpUtil of (BufferedReader reader) {
+	    StringBuilder sb = new StringBuilder();
+	    String line;
+	    br = new BufferedReader(new InputStreamReader(is));
+	    while ((line = br.readLine()) != null) {
+	        sb.append(line);
+	    }
+		return new HttpUtil();
+	}
+}

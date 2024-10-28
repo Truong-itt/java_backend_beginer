@@ -2,10 +2,11 @@ package com.laptrinhjavaweb.model;
 
 public class NewModel extends AbstractModel {
 	private String title;
-	private String thumbnail;
-	private String shortDescription;
 	private String content;
 	private Long categoryId;
+	private String thumbnail;
+	private String shortDescription;
+
 	private Long[] ids;
 	public String getShortDescription() {
 		return shortDescription;

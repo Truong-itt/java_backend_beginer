@@ -7,5 +7,6 @@ import com.laptrinhjavaweb.model.NewModel;
 public interface INewDAO extends GenericDAO<NewModel>{
 	List<NewModel> findByCategory(Long categoryId);
 	Long save(NewModel newModel);
+	NewModel findOne(Long id);
 	
 }

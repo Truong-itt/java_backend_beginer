@@ -3,6 +3,7 @@ package com.laptrinhjavaweb.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.laptrinhjavaweb.model.CategoryModel;
 import com.laptrinhjavaweb.model.NewModel;
 

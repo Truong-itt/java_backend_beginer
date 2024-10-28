@@ -46,15 +46,14 @@ public class HomeController extends HttpServlet{
 		
 		
 		// test save
-		String title = "bai viet xx";
-		String content = "bai viet xx";
-		Long categoryId = 1L;
-		NewModel truongitt = new NewModel();
-		// truyen vao duoi dang la moi doi truong
-		truongitt.setTitle(title);
-		truongitt.setContent(content);
-		truongitt.setCategoryId(categoryId);
-		request.setAttribute("news", newService.save(truongitt));
+//		String title = "bai viet xx";
+//		String content = "bai viet xx";
+//		Long categoryId = 1L;
+//		NewModel truongitt = new NewModel();
+//		truongitt.setTitle(title);
+//		truongitt.setContent(content);
+//		truongitt.setCategoryId(categoryId);
+//		request.setAttribute("news", newService.save(truongitt));
 
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
