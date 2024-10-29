@@ -23,7 +23,7 @@ public class NewAPI extends HttpServlet{
 	private INewService newService;
 	
 	private static final long serialVersionUID = -7056763231377861911L;
-
+	// post du lieu 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		ObjectMapper mapper  = new ObjectMapper();
@@ -51,11 +51,30 @@ public class NewAPI extends HttpServlet{
     
     protected void doPut(HttpServletRequest request, HttpServletResponse response) 
     		throws ServletException, IOException {
-
+		ObjectMapper mapper  = new ObjectMapper();
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("application/json");
+		// doc du lieu va format du lieu
+		NewModel updateNew = HttpUtil.of(request.getReader()).toModel(NewModel.class);
+		System.out.println(updateNew.getId());
+		System.out.println(updateNew.getTitle());
+		System.out.println(updateNew.getThumbnail());
+		System.out.println(updateNew.getShortDescription());
+		System.out.println(updateNew.getContent());
+		System.out.println(updateNew.getCategoryId());
+		
+		updateNew = newService.update(updateNew);
+		mapper.writeValue(response.getOutputStream(), updateNew);
     }
     
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) 
     		throws ServletException, IOException {
-
+		ObjectMapper mapper  = new ObjectMapper();
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("application/json");
+		NewModel newModel = HttpUtil.of(request.getReader()).toModel(NewModel.class);
+		newService.delete(newModel.getIds());
+		
+		mapper.writeValue(response.getOutputStream(), "{}");
     }
 } 

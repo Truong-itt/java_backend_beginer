@@ -11,7 +11,6 @@
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.model.CategoryModel"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.mapper.RowMapper"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
-<fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.mapper.CategoryMapper"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
@@ -28,8 +27,13 @@
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.dao.INewDAO"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.mapper.NewMapper"/>
-<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.NewModel"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
+<fullyQualifiedTypeName name="javax.enterprise.inject.New"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.ws.wsdl.writer.document.Types"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonSubTypes.Type"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.NewModel"/>
+<fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
