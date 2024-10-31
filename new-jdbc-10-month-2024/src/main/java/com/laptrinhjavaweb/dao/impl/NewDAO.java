@@ -23,9 +23,16 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 
 	@Override
 	public Long save(NewModel newModel) {
-		String sql = "Insert into news (title, content, categoryid, createddate, createdby, modifieddate, modifiedby) value(?,?,?,?,?,?,?)";		
+		// cach viet 1 thong thuong 
+		// String sql = "Insert into news (title, content, categoryid, createddate, createdby, modifieddate, modifiedby, thumbnail, shortdescription) value(?,?,?,?,?,?,?,?,?)";		
+		// cach viet 2 thong qu stringbuilderr
+		StringBuilder sql = new StringBuilder();
+		sql.append("INSERT INTO news ");
+		sql.append("(title, content, categoryid, createddate, createdby, modifieddate, modifiedby, thumbnail, shortdescription) ");
+		sql.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
 		return insert(
-				sql,
+				sql.toString(),
 				newModel.getTitle(), 
 				newModel.getContent(), 
 				newModel.getCategoryId(),
@@ -33,10 +40,10 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 				newModel.getCreatedDate(),
 				newModel.getCreateBy(),
 				newModel.getModifiedDate(),
-				newModel.getModifiedBy()
-//				newModel.getThumbnail(),
-//				newModel.getShortDescription());
-				);
+				newModel.getModifiedBy(),
+				
+				newModel.getThumbnail(),
+				newModel.getShortDescription());
 	}
 
 	@Override

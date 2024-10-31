@@ -27,6 +27,7 @@ public class NewService implements INewService {
 		newModel.setCreateBy("");
 		newModel.setModifiedDate(new Timestamp(System.currentTimeMillis()));
 		newModel.setModifiedBy("");	
+		
 		Long newId = newDao.save(newModel);
 		//	System.out.println(newId);		
 		return newDao.findOne(newId);

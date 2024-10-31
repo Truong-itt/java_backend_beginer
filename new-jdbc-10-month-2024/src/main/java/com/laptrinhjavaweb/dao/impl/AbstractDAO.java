@@ -25,7 +25,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 			return DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException | SQLException e) {
 			return null;
-		}
+		}	
 	}
 
 	@Override
@@ -42,6 +42,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 			// chuy doi doc parameters
 			setParameter(statement, parameters);
 			resultSet = statement.executeQuery(); 
+			// lay ra duoc du lieu sql doc va duyet vao do 
 			while (resultSet.next()) {
 				results.add(rowMapper.mapRow(resultSet));
 			}
