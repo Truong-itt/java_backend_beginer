@@ -1,2 +1,0 @@
-<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" pre.fix="dec"%>
-<c:redirect url="/trang-chu"/>

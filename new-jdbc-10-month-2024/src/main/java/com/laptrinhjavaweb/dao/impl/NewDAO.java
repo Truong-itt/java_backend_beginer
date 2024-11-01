@@ -84,6 +84,25 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 	}
 
 //	@Override
+//	public List<NewModel> findAll(int offset, int limit) {
+//		String sql = "select * from news";
+//		return query(sql, new NewMapper());
+//	}
+
+	@Override
+	public int getTotalItem() {
+		String sql = "SELECT count(*) FROM news";
+		return count(sql);
+	}
+
+	@Override
+	public List<NewModel> findAll(int offset, int limit) {
+	    String sql = "SELECT * FROM news LIMIT ?, ?";
+	    return query(sql, new NewMapper(), offset, limit);
+	}
+
+
+//	@Override
 //	public Long save(NewModel newModel) {
 //		ResultSet resultSet = null;
 //		Long id = null;

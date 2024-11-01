@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;com.laptrinhjavaweb.model.AbstractModel.totalItem&apos; in &apos;com.laptrinhjavaweb.model.AbstractModel&apos;&#x0D;&#x0A;- Original project: &apos;new-jdbc-10-month-2024&apos;&#x0D;&#x0A;- Original element: &apos;com.laptrinhjavaweb.model.AbstractModel.totalItem&apos;&#x0D;&#x0A;- Getter method name: &apos;getTotalItem&apos;&#x0D;&#x0A;- Setter method name: &apos;setTotalItem&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;totalItem&apos;" flags="589830" getter="getTotalItem" id="org.eclipse.jdt.ui.self.encapsulate" input="/src\/main\/java&lt;com.laptrinhjavaweb.model{AbstractModel.java[AbstractModel^totalItem" insertion="17" setter="setTotalItem" stamp="1730445371821" version="1.0" visibility="1"/>
+</session>

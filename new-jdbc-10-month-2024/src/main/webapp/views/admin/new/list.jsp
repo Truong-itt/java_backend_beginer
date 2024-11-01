@@ -10,43 +10,79 @@
 
 <body>
 	<div class="main-content">
-		<div class="main-content-inner">
-			<div class="breadcrumbs ace-save-state" id="breadcrumbs">
-				<ul class="breadcrumb">
-					<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">Trang chủ</a></li>
-				</ul><!-- /.breadcrumb -->
-			</div>
-			<div class="page-content">
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="row">
-							<div class="col-xs-12">
-								<div class="table-responsive">
-									<table class="table table-bordered">
-										<thead>
-											<tr>
-												<th><input type="checkbox" id="checkAll"></th>
-												<th>Tên bài viết</th>
-												<th>Mô tả ngắn</th>
-												<th>Thao tác</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>xin chao</td>
-												<td>dhjkl;</td>
-												<td>ghdjkl</td>
-												<td>xinchao</td>
-											</tr>
-										</tbody>
-									</table>
+		<form action="<c:url value='/admin-new'/>" id="formSubmit"
+			method="get">
+
+			<div class="main-content-inner">
+				<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">Trang
+								chủ</a></li>
+					</ul>
+					<!-- /.breadcrumb -->
+				</div>
+				<div class="page-content">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="table-responsive">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+
+													<th>Tên bài viết</th>
+													<th>Mô tả ngắn</th>
+
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>join</td>
+													<td>doe</td>
+												</tr>
+												<c:forEach var="item" items="${model.listResult}">
+													<tr>
+														<td>${item.title}</td>
+														<td>${item.shortDescription}</td>
+													</tr>
+												</c:forEach>
+											</tbody>
+										</table>
+										<ul class="pagination" id="pagination"></ul>
+										<input type="text" value="" id="page" name="page" />
+										 <input type="text" value="" id="maxPageItem" name="maxPageItem" />
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div><!-- /.main-content -->
+
+			<!-- /.main-content -->
+
+		</form>
+	</div>
+	<script type="text/javascript">
+		var totalPages = ${model.totalPage};
+		var currentPage = ${model.page};
+		var limit = 2;
+		$(function() {
+			window.pagObj = $('#pagination').twbsPagination({
+				totalPages : totalPages,
+				visiblePages : 10,
+				startPage : currentPage,
+				onPageClick : function(event, page) {
+					if (currentPage != page) {
+						$('#maxPageItem').value(limit);
+						$('#page').val(page);
+						$('#formSubmit').submit();
+					}
+
+				}
+			});
+		});
+	</script>
 </body>
 </html>

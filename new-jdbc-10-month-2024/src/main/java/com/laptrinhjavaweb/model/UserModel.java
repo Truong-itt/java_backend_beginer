@@ -2,7 +2,7 @@ package com.laptrinhjavaweb.model;
 
 import java.security.Timestamp;
 
-public class UserModel extends AbstractModel {
+public class UserModel extends AbstractModel<UserModel> {
 
 //	private Long id;
 	private String userName;

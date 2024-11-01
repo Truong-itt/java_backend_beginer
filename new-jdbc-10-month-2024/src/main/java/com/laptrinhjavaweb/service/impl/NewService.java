@@ -57,6 +57,16 @@ public class NewService implements INewService {
 		
 	}
 
+	@Override
+	public List<NewModel> findAll(int offset, int limit) { 
+		return newDao.findAll(offset, limit);
+	}
+
+	@Override
+	public int getTotalItem() {
+		return newDao.getTotalItem();
+	}
+
 
 	
 

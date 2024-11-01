@@ -9,4 +9,6 @@ public interface GenericDAO<T> {
 	// viet phuong thuc cho 
 	void update (String sql, Object ...objects);
 	Long insert (String sql, Object ...objects);
+	
+	int count(String sql, Object... parameters);	
 }
