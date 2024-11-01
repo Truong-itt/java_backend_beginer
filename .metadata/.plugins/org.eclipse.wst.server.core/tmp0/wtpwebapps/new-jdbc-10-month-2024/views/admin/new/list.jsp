@@ -50,8 +50,8 @@
 											</tbody>
 										</table>
 										<ul class="pagination" id="pagination"></ul>
-										<input type="text" value="" id="page" name="page" />
-										 <input type="text" value="" id="maxPageItem" name="maxPageItem" />
+										<input type="hidden" value="" id="page" name="page" />
+										 <input type="hidden" value="" id="maxPageItem" name="maxPageItem" />
 									</div>
 								</div>
 							</div>
@@ -71,11 +71,11 @@
 		$(function() {
 			window.pagObj = $('#pagination').twbsPagination({
 				totalPages : totalPages,
-				visiblePages : 10,
+				visiblePages : 2,
 				startPage : currentPage,
 				onPageClick : function(event, page) {
 					if (currentPage != page) {
-						$('#maxPageItem').value(limit);
+						$('#maxPageItem').val(limit);
 						$('#page').val(page);
 						$('#formSubmit').submit();
 					}

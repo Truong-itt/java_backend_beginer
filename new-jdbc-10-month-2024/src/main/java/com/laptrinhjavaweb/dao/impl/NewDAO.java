@@ -96,9 +96,14 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 	}
 
 	@Override
-	public List<NewModel> findAll(int offset, int limit) {
-	    String sql = "SELECT * FROM news LIMIT ?, ?";
-	    return query(sql, new NewMapper(), offset, limit);
+	public List<NewModel> findAll(Integer offset, Integer limit) {
+	    StringBuilder sql = new StringBuilder("SELECT * FROM news ");
+	    if (offset != null && limit != null) {
+	        sql.append("LIMIT ?, ?");
+	        return query(sql.toString(), new NewMapper(), offset, limit);
+	    } else {
+	        return query(sql.toString(), new NewMapper());
+	    }
 	}
 
 

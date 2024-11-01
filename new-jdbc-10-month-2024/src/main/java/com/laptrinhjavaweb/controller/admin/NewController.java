@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.laptrinhjavaweb.constant.SystemConstant;
 import com.laptrinhjavaweb.model.NewModel;
 import com.laptrinhjavaweb.service.INewService;
+import com.laptrinhjavaweb.utils.FormUtil;
 
 @WebServlet(urlPatterns = { "/admin-new" })
 public class NewController extends HttpServlet{
@@ -24,21 +25,25 @@ public class NewController extends HttpServlet{
 	private INewService newService;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws SecurityException, IOException, ServletException {
-		NewModel model = new NewModel();
-		String pageStr = request.getParameter("page");
-		String maxPageItem = request.getParameter("maxPageItem");
-		System.out.println("pageStr:"+pageStr);
-		System.out.println("maxPageItem:"+maxPageItem);
-		if (pageStr != null) {
-			
-			model.setPage(Integer.parseInt(pageStr));
-		} else {
-			model.setPage(1);
-		}
-		if (maxPageItem != null) {
-			model.setMaxPageItem(Integer.parseInt(maxPageItem));
-		}
 		
+		// phuong thuc get thong thuong
+//		NewModel model = new NewModel();
+//		String pageStr = request.getParameter("page");
+//		String maxPageItem = request.getParameter("maxPageItem");
+//		System.out.println("pageStr:"+pageStr);
+//		System.out.println("maxPageItem:"+maxPageItem);
+//		if (pageStr != null) {
+//			
+//			model.setPage(Integer.parseInt(pageStr));
+//		} else {
+//			model.setPage(1);
+//		}
+//		if (maxPageItem != null) {
+//			model.setMaxPageItem(Integer.parseInt(maxPageItem));
+//		}
+		
+		// cai tien bang BeanUtils
+		NewModel model = FormUtil.toModel(NewModel.class, request);
 		
 		// totalpage = totalitem/ maxpageitem
 		System.out.println("model.getPage"+model.getPage());

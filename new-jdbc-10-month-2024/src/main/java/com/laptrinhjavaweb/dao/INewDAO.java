@@ -12,6 +12,6 @@ public interface INewDAO extends GenericDAO<NewModel>{
 	
 
 	void delete(long id);
-	List<NewModel> findAll(int offset, int limit);
+	List<NewModel> findAll(Integer offset, Integer limit);
 	int getTotalItem();
 }
