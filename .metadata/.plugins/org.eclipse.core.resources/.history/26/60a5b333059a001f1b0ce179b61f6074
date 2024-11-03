@@ -1,0 +1,29 @@
+package com.laptrinhjavaweb.pagging;
+
+public class PageRequest implements Pageble {
+
+	@Override
+	public Integer getPage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer getOffset() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer getLimit() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Sorter getSorter() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

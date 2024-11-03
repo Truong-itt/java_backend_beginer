@@ -1,7 +1,0 @@
-package com.laptrinhjavaweb.service.impl;
-
-import com.laptrinhjavaweb.service.ICategoryService;
-
-public class CategoryService implements ICategoryService {
-
-}

@@ -16,9 +16,11 @@ public class AbstractModel<T> {
     private Integer totalPage;
     private Integer totalItem;
     private String 	sortName;
+	private String sortBy;
+    
 	public String getSortName() {
 		
-		return sortName;
+		return sortName;	
 	}
 	public void setSortName(String sortName) {
 		this.sortName = sortName;
@@ -29,7 +31,7 @@ public class AbstractModel<T> {
 	public void setSortBy(String sortBy) {
 		this.sortBy = sortBy;
 	}
-	private String sortBy;
+
 
 
     public Long getId() {

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.enterprise.inject.New;
 
 import com.laptrinhjavaweb.model.NewModel;
+import com.laptrinhjavaweb.pagging.Pageble;
 
 public interface INewService {
 	List<NewModel> findByCategory(Long categoryId);
@@ -12,7 +13,7 @@ public interface INewService {
 	NewModel update(NewModel newModel);
 	
 	void delete(Long[] ids);
-	List<NewModel> findAll(Integer offset, Integer limit, String sortName, String sortBy);
+	List<NewModel> findAll(Pageble pageble);
 	
 	int getTotalItem();
 }

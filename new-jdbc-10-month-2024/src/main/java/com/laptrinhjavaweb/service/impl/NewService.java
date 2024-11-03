@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import com.laptrinhjavaweb.dao.ICategoryDAO;
 import com.laptrinhjavaweb.dao.INewDAO;
 import com.laptrinhjavaweb.model.NewModel;
+import com.laptrinhjavaweb.pagging.Pageble;
 import com.laptrinhjavaweb.service.INewService;
 
 public class NewService implements INewService {
@@ -27,7 +28,6 @@ public class NewService implements INewService {
 		newModel.setCreateBy("");
 		newModel.setModifiedDate(new Timestamp(System.currentTimeMillis()));
 		newModel.setModifiedBy("");	
-		
 		Long newId = newDao.save(newModel);
 		//	System.out.println(newId);		
 		return newDao.findOne(newId);
@@ -54,12 +54,13 @@ public class NewService implements INewService {
 		for (long id:ids) {
 			newDao.delete(id);
 		}
-		
 	}
 
 	@Override
-	public List<NewModel> findAll(Integer offset, Integer limit, String sortName, String sortBy) { 
-		return newDao.findAll(offset, limit, sortName, sortBy);
+	public List<NewModel> findAll(Pageble pageble) { 
+		System.out.println("new service");
+
+		return newDao.findAll(pageble);
 	}
 
 	@Override

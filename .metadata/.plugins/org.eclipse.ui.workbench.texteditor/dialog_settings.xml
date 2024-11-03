@@ -2,13 +2,17 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="findAll" key="selection"/>
+		<item value="pagination" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="pagination"/>
+			<item value="sortBy"/>
+			<item value="sortName"/>
 			<item value="findAll"/>
+			<item value="getSort"/>
 			<item value="commons-beanutils"/>
 			<item value="page"/>
 			<item value="formSubmit"/>
@@ -19,10 +23,6 @@
 			<item value="save"/>
 			<item value="null"/>
 			<item value="update"/>
-			<item value="findByCategory"/>
-			<item value="newService"/>
-			<item value="javax.servlet.jsp.jstl"/>
-			<item value="jsp.api.version"/>
 		</list>
 		<list key="replacehistory">
 		</list>

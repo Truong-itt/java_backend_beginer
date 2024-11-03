@@ -22,7 +22,6 @@
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.utils.HttpUtil"/>
 <fullyQualifiedTypeName name="javax.inject.Inject"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.service.INewService"/>
-<fullyQualifiedTypeName name="com.laptrinhjavaweb.dao.INewDAO"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.mapper.NewMapper"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
@@ -40,4 +39,8 @@
 <fullyQualifiedTypeName name="javax.enterprise.inject.New"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.model.NewModel"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.pagging.PageRequest"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.sort.Sorter"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.dao.INewDAO"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.pagging.Pageble"/>
 </qualifiedTypeNameHistroy>
