@@ -50,8 +50,8 @@
 											</tbody>
 										</table>
 										<ul class="pagination" id="pagination"></ul>
-										<input type="hidden" value="" id="page" name="page" /> <input
-											type="hidden" value="" id="maxPageItem" name="maxPageItem" />
+										<input type="hidden" value="" id="page" name="page" />
+										 <input type="hidden" value="" id="maxPageItem" name="maxPageItem" />
 									</div>
 								</div>
 							</div>
@@ -65,14 +65,8 @@
 		</form>
 	</div>
 	<script type="text/javascript">
-		var totalPages = $
-		{
-			model.totalPage
-		};
-		var currentPage = $
-		{
-			model.page
-		};
+		var totalPages = ${model.totalPage};
+		var currentPage = ${model.page};
 		var limit = 2;
 		$(function() {
 			window.pagObj = $('#pagination').twbsPagination({

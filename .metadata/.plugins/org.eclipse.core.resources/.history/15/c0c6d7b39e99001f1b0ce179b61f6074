@@ -99,12 +99,14 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 	public List<NewModel> findAll(Integer offset, Integer limit, String sortName, String sortBy) {
 	    StringBuilder sql = new StringBuilder("SELECT * FROM news ");
 	    if (sortName != null && sortBy != null) {
-	    	sql.append("ORDER BY " + sortName+ " " + sortBy + "");
+	    	sql.append("ORDER BY" + sortName+ " " + sortBy + "");
 	    }
 	    if (offset != null && limit != null) {
-	        sql.append("LIMIT "+ offset + ", " + limit +"");
+	        sql.append("LIMIT ?, ?");
+	        return query(sql.toString(), new NewMapper(), offset, limit);
+	    } else {
+	        return query(sql.toString(), new NewMapper());
 	    }
-	    return query(sql.toString(), new NewMapper());
 	}
 
 

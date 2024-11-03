@@ -15,22 +15,6 @@ public class AbstractModel<T> {
     private Integer maxPageItem;
     private Integer totalPage;
     private Integer totalItem;
-    private String 	sortName;
-	public String getSortName() {
-		
-		return sortName;
-	}
-	public void setSortName(String sortName) {
-		this.sortName = sortName;
-	}
-	public String getSortBy() {
-		return sortBy;
-	}
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
-	}
-	private String sortBy;
-
 
     public Long getId() {
         return id;

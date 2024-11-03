@@ -58,8 +58,8 @@ public class NewService implements INewService {
 	}
 
 	@Override
-	public List<NewModel> findAll(Integer offset, Integer limit, String sortName, String sortBy) { 
-		return newDao.findAll(offset, limit, sortName, sortBy);
+	public List<NewModel> findAll(Integer offset, Integer limit) { 
+		return newDao.findAll(offset, limit);
 	}
 
 	@Override
