@@ -1,0 +1,37 @@
+package com.laptrinhjavaweb.mapper;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.laptrinhjavaweb.model.UserModel;
+
+public class UserMapper implements RowMapper<UserModel>{
+
+	@Override
+	public UserModel mapRow(ResultSet rs) {
+		try {
+			// thuc hien get thong tin model dem vao du lieu
+			// mto so data dung de set vao doi tuong la 
+			// id username fullname password status
+			UserModel user = new UserModel();
+			user.setId(rs.getLong("id"));
+			user.setUserName(rs.getString("username"));
+			user.setFullName(rs.getString("fullname"));
+			user.setStatus(rs.getInt("status"));
+			
+			// xu li khi map data khi co data
+			if (rs.getTimestamp("modifieddate") != null)  {
+				user.setModifiedDate(rs.getTimestamp("modifieddate")); 
+			}	
+			if (rs.getTimestamp("modifiedby") != null)  {
+				user.setModifiedBy(rs.getString("modifiedby")); 
+			} 
+			
+			return user;
+		}
+		catch ( SQLException e) {
+				return null;
+		}
+	}
+
+}

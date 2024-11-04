@@ -13,7 +13,7 @@ import com.laptrinhjavaweb.mapper.NewMapper;
 import com.laptrinhjavaweb.model.CategoryModel;
 import com.laptrinhjavaweb.model.NewModel;
 import com.laptrinhjavaweb.pagging.Pageble;
-import com.laptrinhjavaweb.paging.Pageble;
+
 
 
 public class NewDAO extends AbstractDAO<NewModel> implements INewDAO{

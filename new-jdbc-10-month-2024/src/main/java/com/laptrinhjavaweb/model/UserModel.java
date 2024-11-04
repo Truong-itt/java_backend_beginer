@@ -10,11 +10,17 @@ public class UserModel extends AbstractModel<UserModel> {
 	private String passWord;
 	private int status;
 	private Long roleId;
-//	private Timestamp createdDate;
-//	private Timestamp modifiedDate;
-//	private String createdBy;
-//	private String modifiedBy;
+	private RoleModel role = new RoleModel();
+	
 
+	public RoleModel getRole() {
+		return role;
+	}
+	public void setRole(RoleModel role) {
+		this.role = role;
+	}
+	
+	
 	public String getPassWord() {
 		return passWord;
 	}
