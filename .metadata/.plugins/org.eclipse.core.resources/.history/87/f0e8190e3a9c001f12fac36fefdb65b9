@@ -1,0 +1,13 @@
+package com.laptrinhjavaweb.utils;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class MessageUtil {
+	public static void showMessage(HttpServletRequest request) {
+		if (request.getParameter("mesage") != null) {
+			String messageResponse = "";
+			String alert = "";
+			String mesage = re
+		}
+	}
+}

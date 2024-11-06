@@ -16,4 +16,5 @@ public interface INewService {
 	List<NewModel> findAll(Pageble pageble);
 	
 	int getTotalItem();
+	NewModel findOne(long id);
 }

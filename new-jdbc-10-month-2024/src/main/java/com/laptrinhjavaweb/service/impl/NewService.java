@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import com.laptrinhjavaweb.dao.ICategoryDAO;
 import com.laptrinhjavaweb.dao.INewDAO;
+import com.laptrinhjavaweb.model.CategoryModel;
 import com.laptrinhjavaweb.model.NewModel;
 import com.laptrinhjavaweb.pagging.Pageble;
 import com.laptrinhjavaweb.service.INewService;
@@ -15,6 +16,9 @@ public class NewService implements INewService {
 	
 	@Inject
 	private INewDAO newDao;
+	
+	@Inject
+	private ICategoryDAO categoryDAO;
 	
 	@Override
 	public List<NewModel> findByCategory(Long categoryId) {
@@ -66,6 +70,14 @@ public class NewService implements INewService {
 	@Override
 	public int getTotalItem() {
 		return newDao.getTotalItem();
+	}
+
+	@Override
+	public NewModel findOne(long id) {
+		NewModel newModel = newDao.findOne(id);
+		CategoryModel categoryModel = categoryDAO.findOne(id);
+		newModel.setCategoryCode(categoryModel.getCode());
+		return newModel;
 	}
 
 
