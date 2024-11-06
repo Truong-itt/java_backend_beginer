@@ -20,8 +20,6 @@
 				</li>
 				<li class="nav-item"><a class="nav-link" href='#'>Thoát</a></li>
 
-
-
 				<c:if test="${not empty USERMODEL}">
 					<li class="nav-item"><a class="nav-link" href='#'>Wellcome,
 							${USERMODEL.fullName}</a></li>

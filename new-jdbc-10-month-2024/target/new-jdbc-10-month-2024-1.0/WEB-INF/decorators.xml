@@ -10,12 +10,15 @@
         <pattern>/admin*</pattern>
     </decorator>
     
+ 
+
+    <decorator name="web" page="web.jsp">
+        <pattern>/*</pattern>
+    </decorator>
     
     <decorator name="login" page="login.jsp">
         <pattern>/dang-nhap</pattern>
     </decorator>
     
-    <decorator name="web" page="web.jsp">
-        <pattern>/*</pattern>
-    </decorator>
+    
 </decorators>

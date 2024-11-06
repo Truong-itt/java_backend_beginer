@@ -1,0 +1,53 @@
+package filter;
+
+import java.io.IOException;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.laptrinhjavaweb.mapper.UserMapper;
+import com.laptrinhjavaweb.model.UserModel;
+import com.laptrinhjavaweb.utils.SessionUtil;
+
+import constant.SystemConstant;
+
+public class AuthorizationFilter implements Filter{
+
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+		
+		
+	}
+
+	@Override
+	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
+			throws IOException, ServletException {
+		HttpServletRequest request = (HttpServletRequest) servletRequest;
+		HttpServletResponse response = (HttpServletResponse) servletResponse;
+		String url = request.getRequestURI();
+		if (url.startsWith("/admin")) {
+			// check user có phai thuoc lop do hay khong
+			UserModel model = (UserModel) SessionUtil.getInstance().getValue(request, "USERMODEL");
+//			if (model != null) {
+//				if (model.getRole().getCode().equals(SystemConstant.ADMIN));
+//			}
+//			else if {
+//				
+//			}
+		}
+		
+	}
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

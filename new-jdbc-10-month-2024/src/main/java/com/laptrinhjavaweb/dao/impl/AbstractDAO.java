@@ -10,22 +10,36 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.laptrinhjavaweb.dao.GenericDAO;
 import com.laptrinhjavaweb.mapper.RowMapper;
 
 public class AbstractDAO<T> implements GenericDAO<T> {
+//	public Connection getConnection() {
+//		try {
+//			Class.forName("com.mysql.cj.jdbc.Driver");
+//			String url = "jdbc:mysql://localhost:3306/newjava09month2024";
+//			String user = "root";
+//			String password = "something";
+//			return DriverManager.getConnection(url, user, password);
+//		} catch (ClassNotFoundException | SQLException e) {
+//			return null;
+//		}	
+//	}
+	ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
+
 	public Connection getConnection() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/newjava09month2024";
-			String user = "root";
-			String password = "something";
+			Class.forName(resourceBundle.getString("driverName"));
+			String url = resourceBundle.getString("url");
+			String user = resourceBundle.getString("user");
+			String password = resourceBundle.getString("password");
 			return DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException | SQLException e) {
 			return null;
-		}	
+		}
 	}
 
 	@Override
@@ -41,17 +55,15 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 			Object[] bien = parameters;
 			// chuy doi doc parameters
 			setParameter(statement, parameters);
-			resultSet = statement.executeQuery(); 
-			// lay ra duoc du lieu sql doc va duyet vao do 
+			resultSet = statement.executeQuery();
+			// lay ra duoc du lieu sql doc va duyet vao do
 			while (resultSet.next()) {
 				results.add(rowMapper.mapRow(resultSet));
 			}
 			return results;
-		}
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			return null;
-		}
-		finally {
+		} finally {
 			try {
 				if (connection != null) {
 					connection.close();
@@ -62,7 +74,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 				if (resultSet != null) {
 					resultSet.close();
 				}
-	
+
 			} catch (Exception e) {
 				return null;
 			}
@@ -83,7 +95,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 				} else if (parameter instanceof Timestamp) {
 					statement.setTimestamp(index, (Timestamp) parameter);
 				} else if (parameter == null) {
-					statement.setNull(index, Types.NULL);	
+					statement.setNull(index, Types.NULL);
 				}
 			}
 		} catch (SQLException e) {
@@ -136,11 +148,11 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 			statement = connection.prepareStatement(sql, statement.RETURN_GENERATED_KEYS);
 			setParameter(statement, parameters);
 			statement.executeUpdate();
-			resultSet = statement.getGeneratedKeys(); 
+			resultSet = statement.getGeneratedKeys();
 			if (resultSet.next()) {
-				id =  resultSet.getLong(1);
+				id = resultSet.getLong(1);
 			}
-			connection.commit(); 
+			connection.commit();
 			return id;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -151,8 +163,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 					e1.printStackTrace();
 				}
 			}
-		}
-		finally {
+		} finally {
 			try {
 				if (connection != null) {
 					connection.close();
@@ -163,11 +174,11 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 				if (resultSet != null) {
 					resultSet.close();
 				}
-	
+
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
-		}		
+		}
 		return null;
 	}
 
@@ -182,7 +193,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 			statement = connection.prepareStatement(sql);
 			setParameter(statement, parameters);
 			resultSet = statement.executeQuery();
-			while(resultSet.next()) {
+			while (resultSet.next()) {
 				// lay cot dau tien cua cau query
 				count = resultSet.getInt(1);
 			}
@@ -198,7 +209,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 					statement.close();
 				}
 			} catch (SQLException e2) {
-				return 0;	
+				return 0;
 			}
 		}
 	}

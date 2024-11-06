@@ -17,7 +17,16 @@
 		<filter-name>sitemesh</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	<filter>
+		<filter-name>servletFilter</filter-name>
+		<filter-class>com.laptrinhjavaweb.filter.AuthorizationFilter</filter-class>
+	</filter>
 
+	<filter-mapping>
+		<filter-name>servletFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 
 	<session-config>
@@ -27,7 +36,8 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-
+	
+	
 
 </web-app>
 	

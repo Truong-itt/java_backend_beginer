@@ -1,6 +1,7 @@
 package com.laptrinhjavaweb.controller.web;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -27,14 +28,26 @@ public class HomeController extends HttpServlet {
 	private INewService newService;
 	@Inject
 	private IUserService userService;
-	
 	private static final long serialVersionUID = 2686801510274002166L;
+	
+	ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws SecurityException, IOException, ServletException {
 		// lay hanh dong thuc hien
 		String action = request.getParameter("action");
 		if (action != null && action.equals("login")) {
+			// lay key
+			
+			System.out.println("xin chao ---");
+			String message = request.getParameter("message");
+			String alert = request.getParameter("alert");
+			System.out.println(message);
+			System.out.println(alert);
+			if (message != null && alert != null) {
+				request.setAttribute("message", resourceBundle.getString(message));
+				request.setAttribute("alert", alert);
+			}
 			System.out.println(action);
 			RequestDispatcher rd = request.getRequestDispatcher("/views/login.jsp");
 			rd.forward(request, response);
@@ -90,18 +103,21 @@ public class HomeController extends HttpServlet {
 			System.out.println(model.getStatus());
 			
 			
-			model = userService.findByUserNameAndPasswordAndStatus(model.getUserName(), model.getPassWord(), model.getStatus());
+			model = userService.findByUserNameAndPasswordAndStatus(model.getUserName(), model.getPassWord(), 1);
 			if (model != null) {
 				SessionUtil.getInstance().putValue(request, "USERMODEL", model);
 				if (model.getRole().getCode().equals("USER")){	
+					System.out.println("dang nhap voi dang user");		
 					response.sendRedirect(request.getContextPath() + "/trang-chu");
 				}
 				else if (model.getRole().getCode().equals("ADMIN")) {
+					System.out.println("dang nhap voi dang admin ");
 					response.sendRedirect(request.getContextPath() + "/admin-home");
 				}
-				else {
-					response.sendRedirect(request.getContextPath() + "/dang-nhap?action:login");					
-				}
+			}
+			else {
+				System.out.println("dang nhap sai pass");
+				response.sendRedirect(request.getContextPath() + "/dang-nhap?action=login&message=username_password_invalid&alert=danger");					
 			}
 		}
 	}

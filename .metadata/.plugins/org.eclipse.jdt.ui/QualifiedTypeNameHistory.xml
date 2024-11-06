@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
@@ -37,15 +36,22 @@
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.pagging.Pageble"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="com.laptrinhjavaweb.mapper.UserMapper"/>
-<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.UserModel"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.dao.IUserDAO"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.model.RoleModel"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="javax.inject.Inject"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.service.IUserService"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="java.util.ResourceBundle"/>
+<fullyQualifiedTypeName name="javax.servlet.Filter"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.mapper.UserMapper"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.UserModel"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.utils.SessionUtil"/>
+<fullyQualifiedTypeName name="constant.SystemConstant"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.constant.SystemConstant"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
