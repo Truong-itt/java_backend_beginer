@@ -27,11 +27,12 @@ public class NewService implements INewService {
 	
 	@Override
 	public NewModel save(NewModel newModel) {
-		// get id them vao ra
+		// get id them vao ra		
+		
 		newModel.setCreatedDate(new Timestamp(System.currentTimeMillis()));
-		newModel.setCreateBy("");
-		newModel.setModifiedDate(new Timestamp(System.currentTimeMillis()));
-		newModel.setModifiedBy("");	
+//		newModel.setCreateBy("");
+//		newModel.setModifiedDate(new Timestamp(System.currentTimeMillis()));
+//		newModel.setModifiedBy("");	
 		Long newId = newDao.save(newModel);
 		//	System.out.println(newId);		
 		return newDao.findOne(newId);

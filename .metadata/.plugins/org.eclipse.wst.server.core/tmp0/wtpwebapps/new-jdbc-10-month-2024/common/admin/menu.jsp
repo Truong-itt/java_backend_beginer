@@ -40,11 +40,20 @@
 				Quản lý bài viết <b class="arrow fa fa-angle-down"></b>
 		</a> <b class="arrow"></b>
 			<ul class="submenu">
-				<li><a
-					href='<c:url value="/admin-new?page=1&maxPageItem=2&sortName=title&sortBy=desc"/>'>
+				<c:url var="adminURL" value="/admin-new">
+				    <c:param name="page" value="1" />
+				    <c:param name="maxPageItem" value="2" />
+				    <c:param name="sortName" value="title" />
+				    <c:param name="sortBy" value="desc" />
+				</c:url>
+				<li>
+					<a href="${adminURL}">
 						<i class="menu-icon fa fa-caret-right"></i> DS bài viết
-				</a> <b class="arrow"></b></li>
-			</ul></li>
+					</a> 
+					<b class="arrow"></b>
+				</li>
+			</ul>
+		</li>
 	</ul>
 	<div class="sidebar-toggle sidebar-collapse">
 		<i class="ace-icon fa fa-angle-double-left ace-save-state"

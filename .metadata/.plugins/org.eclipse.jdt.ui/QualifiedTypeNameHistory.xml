@@ -43,17 +43,17 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.mapper.UserMapper"/>
-<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.UserModel"/>
-<fullyQualifiedTypeName name="com.laptrinhjavaweb.utils.SessionUtil"/>
 <fullyQualifiedTypeName name="constant.SystemConstant"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.NewModel"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.dao.ICategoryDAO"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.model.CategoryModel"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.service.impl.CategoryService"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.service.ICategoryService"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.utils.MessageUtil"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.constant.SystemConstant"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.NewModel"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.utils.SessionUtil"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.UserModel"/>
 </qualifiedTypeNameHistroy>

@@ -12,7 +12,6 @@ public class UserModel extends AbstractModel<UserModel> {
 	private Long roleId;
 	private RoleModel role = new RoleModel();
 	
-
 	public RoleModel getRole() {
 		return role;
 	}

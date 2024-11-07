@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.laptrinhjavaweb.model.NewModel;
+import com.laptrinhjavaweb.model.UserModel;
 import com.laptrinhjavaweb.service.INewService;
 import com.laptrinhjavaweb.utils.HttpUtil;
+import com.laptrinhjavaweb.utils.SessionUtil;
 
 
 
@@ -35,14 +37,11 @@ public class NewAPI extends HttpServlet{
 		// loi the do no la of duoc dung nen co the hieu no la cua lop day luon 
 		// suy ra dugn va trien khai ngay tren mot dong
 		NewModel newModel = HttpUtil.of(request.getReader()).toModel(NewModel.class);
-//		System.out.println(newModel.getTitle());
-//		System.out.println(newModel.getContent());
-//		System.out.println(newModel.getCategoryId());
-		System.out.println(newModel.getThumbnail());
-		System.out.println(newModel.getShortDescription());
-//		System.out.println(newModel.getCreatedDate());
-//		System.out.println(newModel.getCreateBy());
-		System.out.println("xin chao moi nguoi");
+
+//		System.out.println(newModel.getThumbnail());
+//		System.out.println(newModel.getShortDescription());
+//		System.out.println("xin chao moi nguoi");
+		newModel.setCreateBy(((UserModel)SessionUtil.getInstance().getValue(request, "USERMODEL")).getFullName());
 		newModel = newService.save(newModel);       // save va tim id 
 		mapper.writeValue(response.getOutputStream(), newModel);
 		System.out.println(newModel);
@@ -56,12 +55,16 @@ public class NewAPI extends HttpServlet{
 		response.setContentType("application/json");
 		// doc du lieu va format du lieu
 		NewModel updateNew = HttpUtil.of(request.getReader()).toModel(NewModel.class);
-		System.out.println(updateNew.getId());
-		System.out.println(updateNew.getTitle());
-		System.out.println(updateNew.getThumbnail());
-		System.out.println(updateNew.getShortDescription());
-		System.out.println(updateNew.getContent());
-		System.out.println(updateNew.getCategoryId());
+		updateNew.setCreateBy(((UserModel)SessionUtil.getInstance().getValue(request, "USERMODEL")).getFullName());
+
+		
+		
+//		System.out.println(updateNew.getId());
+//		System.out.println(updateNew.getTitle());
+//		System.out.println(updateNew.getThumbnail());
+//		System.out.println(updateNew.getShortDescription());
+//		System.out.println(updateNew.getContent());
+//		System.out.println(updateNew.getCategoryId());
 		
 		updateNew = newService.update(updateNew);
 		mapper.writeValue(response.getOutputStream(), updateNew);
@@ -74,7 +77,6 @@ public class NewAPI extends HttpServlet{
 		response.setContentType("application/json");
 		NewModel newModel = HttpUtil.of(request.getReader()).toModel(NewModel.class);
 		newService.delete(newModel.getIds());
-		
 		mapper.writeValue(response.getOutputStream(), "{}");
     }
 } 
