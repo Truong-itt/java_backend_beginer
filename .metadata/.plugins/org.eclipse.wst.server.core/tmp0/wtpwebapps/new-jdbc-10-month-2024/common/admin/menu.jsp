@@ -45,6 +45,7 @@
 				    <c:param name="maxPageItem" value="2" />
 				    <c:param name="sortName" value="title" />
 				    <c:param name="sortBy" value="desc" />
+				    <c:param name="type" value="list" />
 				</c:url>
 				<li>
 					<a href="${adminURL}">

@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/laptrinhjavaweb/controller/admin/NewController.java=UTF-8
 encoding//src/main/java/com/laptrinhjavaweb/filter/AuthorizationFilter.java=UTF-8
+encoding//src/main/java/com/laptrinhjavaweb/utils/FormUtil.java=UTF-8

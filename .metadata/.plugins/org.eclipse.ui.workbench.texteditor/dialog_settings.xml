@@ -2,16 +2,16 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="twbsPagination" key="selection"/>
+		<item value="Thêm" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="thêm"/>
 			<item value="twbsPagination"/>
 			<item value="cập nhật"/>
 			<item value="thêm bài"/>
-			<item value="thêm"/>
 			<item value="findByUserNameAndPasswordAndStatus"/>
 			<item value="pagination"/>
 			<item value="sortBy"/>

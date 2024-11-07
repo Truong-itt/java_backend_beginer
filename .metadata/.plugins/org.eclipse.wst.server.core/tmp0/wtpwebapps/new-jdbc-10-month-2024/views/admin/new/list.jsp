@@ -36,7 +36,8 @@
                                 <div class="table-btn-controls">
                                     <div class="pull-right tableTools-container">
                                         <div class="dt-buttons btn-overlap btn-group">
-                                            <a flag="info" class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" data-toggle="tooltip" title='Thêm bài viết' href='<c:url value="/admin-new?type=edit"/>'>
+                                            <a flag="info" class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
+                                             data-toggle="tooltip" title='Thêm bài viết' href='<c:url value="/admin-new?type=edit"/>'>
                                                 <span>
                                                     <i class="fa fa-plus-circle bigger-110 purple"></i>
                                                 </span>
