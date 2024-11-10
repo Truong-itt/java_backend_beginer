@@ -33,6 +33,8 @@ public class NewService implements INewService {
 //		newModel.setCreateBy("");
 //		newModel.setModifiedDate(new Timestamp(System.currentTimeMillis()));
 //		newModel.setModifiedBy("");	
+		CategoryModel category = categoryDAO.findOneByCode(newModel.getCategoryCode());
+		newModel.setCategoryId(category.getId());
 		Long newId = newDao.save(newModel);
 		//	System.out.println(newId);		
 		return newDao.findOne(newId);
@@ -46,12 +48,14 @@ public class NewService implements INewService {
 		// get mot so thong tin tu code cu
 		updateNew.setCreatedDate(oldNew.getCreatedDate());
 		updateNew.setCreateBy(oldNew.getCreateBy());
-		updateNew.setModifiedBy(oldNew.getModifiedBy());
-		updateNew.setModifiedDate(oldNew.getModifiedDate());
+//		updateNew.setModifiedBy(oldNew.getModifiedBy());
+//		updateNew.setModifiedDate(oldNew.getModifiedDate());
+
 		// du lieu sau khi thuc hien thi can 
+		CategoryModel category = categoryDAO.findOneByCode(updateNew.getCategoryCode());
+		updateNew.setCategoryId(category.getId());
 		newDao.update(updateNew);
 		return newDao.findOne(updateNew.getId());
-
 	}
 
 	@Override
@@ -76,12 +80,9 @@ public class NewService implements INewService {
 	@Override
 	public NewModel findOne(long id) {
 		NewModel newModel = newDao.findOne(id);
-		CategoryModel categoryModel = categoryDAO.findOne(id);
+		System.out.println("thong tin tim la:"+id);
+		CategoryModel categoryModel = categoryDAO.findOne(newModel.getCategoryId());
 		newModel.setCategoryCode(categoryModel.getCode());
 		return newModel;
 	}
-
-
-	
-
 }

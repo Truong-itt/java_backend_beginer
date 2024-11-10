@@ -17,6 +17,7 @@ import com.laptrinhjavaweb.dao.GenericDAO;
 import com.laptrinhjavaweb.mapper.RowMapper;
 
 public class AbstractDAO<T> implements GenericDAO<T> {
+	
 //	public Connection getConnection() {
 //		try {
 //			Class.forName("com.mysql.cj.jdbc.Driver");

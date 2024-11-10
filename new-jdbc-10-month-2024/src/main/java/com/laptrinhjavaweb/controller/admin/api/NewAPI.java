@@ -44,7 +44,7 @@ public class NewAPI extends HttpServlet{
 		newModel.setCreateBy(((UserModel)SessionUtil.getInstance().getValue(request, "USERMODEL")).getFullName());
 		newModel = newService.save(newModel);       // save va tim id 
 		mapper.writeValue(response.getOutputStream(), newModel);
-		System.out.println(newModel);
+//		System.out.println(newModel);
 		
     }
     
@@ -77,6 +77,6 @@ public class NewAPI extends HttpServlet{
 		response.setContentType("application/json");
 		NewModel newModel = HttpUtil.of(request.getReader()).toModel(NewModel.class);
 		newService.delete(newModel.getIds());
-		mapper.writeValue(response.getOutputStream(), "{}");
+		mapper.writeValue(response.getOutputStream(), "{xin chao moi nguoi}");
     }
 } 

@@ -2,27 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Thêm" key="selection"/>
+		<item value="update" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="update"/>
+			<item value="delete"/>
+			<item value="input[type=checkbox]"/>
+			<item value="save"/>
+			<item value="btnAddOrUpdateNew"/>
+			<item value="cập nhật"/>
+			<item value="chọn loại"/>
 			<item value="thêm"/>
 			<item value="twbsPagination"/>
-			<item value="cập nhật"/>
 			<item value="thêm bài"/>
 			<item value="findByUserNameAndPasswordAndStatus"/>
 			<item value="pagination"/>
 			<item value="sortBy"/>
 			<item value="sortName"/>
 			<item value="findAll"/>
-			<item value="getSort"/>
-			<item value="commons-beanutils"/>
-			<item value="page"/>
-			<item value="formSubmit"/>
-			<item value="jquery.twbsPagination"/>
-			<item value="table"/>
 		</list>
 		<list key="replacehistory">
 		</list>

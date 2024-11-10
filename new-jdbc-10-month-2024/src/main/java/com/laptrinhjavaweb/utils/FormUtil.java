@@ -1,13 +1,9 @@
 package com.laptrinhjavaweb.utils;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.beanutils.BeanUtils;
-
 import com.laptrinhjavaweb.model.NewModel;
 
 public class FormUtil {
