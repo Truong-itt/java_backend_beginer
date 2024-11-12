@@ -53,4 +53,12 @@ Front-end có thể triển khai bằng:
 1. **Clone dự án từ GitHub**:
    ```bash
    git clone <repository-url>
-   cd (chưa hoàn thiện còn update 10/27/2024)
+   cd .\new-jdbc-10-month-2024\
+   ```
+2. **CREATE DATABASE**
+   Run script create database-table
+   ```
+   cd database
+   ```
+3. **Run system with TOMCAT**
+## Kết thúc
