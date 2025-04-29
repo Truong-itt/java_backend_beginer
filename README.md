@@ -1,4 +1,4 @@
-# Full Stack Project Basic RESTful API Web Application Java JDBC Servlet 
+# Project RESTful API Web Application Java JDBC Servlet 
 
 ## Mô tả
 Đây là một ứng dụng web full-stack sử dụng **Java** và **JDBC Servlet** cho phần back-end build **Java - Core**, xây dựng API theo mô hình **RESTful** để tương tác với cơ sở dữ liệu **MySQL**. Phần front-end có thể sử dụng **HTML/CSS/JavaScript** kết nối với API.
